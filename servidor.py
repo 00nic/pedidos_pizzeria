@@ -13,3 +13,10 @@ app.config['MYSQL__CURSORCLASS'] = os.getenv('MYSQL__CURSORCLASS')
 app.config['MYSQL__KEY'] = os.getenv('MYSQL__KEY')
 
 mysql = MySQL(app)
+
+@app.route('/')
+def inicio():
+    return render_template('inicio.html')
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
