@@ -1,1 +1,13 @@
 /* Diseño de catalogo */
+.encabezado{
+    text-align: center;
+}
+
+.imagen{
+    display: grid;
+    position: relative;
+}
+.imagen img{
+    position: relative;
+    width: 100%;
+}
