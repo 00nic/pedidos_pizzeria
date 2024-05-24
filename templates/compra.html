@@ -6,10 +6,32 @@ Boton realizar pedido + redirect a catalogo -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--Agregar css-->
+    <title>Realizar pago</title>
 </head>
 <body>
-    <h1>Modificación</h1>
-    <h1>Modificación2</h1>
+
+    <form action="{{ url_for('procesar_pedido') }}" method="post"><!--recibir estos datos en servidor.py q coincida con el def: y guardar en BD-->
+        <h2>Realizar pago</h2>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="direccion">Dirección de envío:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="metodo_pago">Método de pago:</label>
+        <select id="metodo_pago" name="metodo_pago" required>
+          <option value="tarjeta_credito">Tarjeta de crédito</option>
+          <option value="paypal">Tarjeta de débito</option>
+          <option value="transferencia">Efectivo</option>
+        </select>
+
+        <input type="submit" value="Confirmar pedido">
+    </form>
+
 </body>
 </html>
