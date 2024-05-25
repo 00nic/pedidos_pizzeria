@@ -13,85 +13,77 @@ Boton realizar pedido + redirect a catalogo -->
     <body>
         <div class="container">
             <h2>Realizar pago</h2>
+
             <form action="{{ url_for('procesar_pedido') }}" method="POST">
                 <!--recibir estos datos en servidor.py q coincida con el def:, guardar en BD y redirect a inicio-->
                 <div class="input_group">
                     <div class="input_box">
-                        <input type="text" placeholder="Nombre"
-                        class="nombre" required>
+                        <input type="text" placeholder="Nombre" class="nombre" required>
                         <i class="fa fa-user icon"></i>
                     </div>
                     <div class="input_box">
-                        <input type="email" placeholder="Correo electronico"
-                        class="nombre" required>
+                        <input type="email" placeholder="Correo electronico" class="nombre" required>
                         <i class="fa fa-envelope icon"></i>
                     </div>
                     <div class="input_box">
-                        <input type="text" placeholder="Dirección de envio"
-                        class="nombre" required>
+                        <input type="text" placeholder="Dirección de envio" class="nombre" required>
                         <i class="fa fa-map-marker icon"></i>
                     </div>
                     <div class="input_box">
-                        <input type="tel" placeholder="Teléfono"
-                        class="nombre" required>
+                        <input type="tel" placeholder="Teléfono" class="nombre" required>
                         <i class="fa fa-phone"></i>
                     </div>
                 </div>
                 <div class="input_group">
                     <div class="input_box">
                         <h4>Metodos de pago</h4>
-                        <input type="radio" name="pagar" class="radio"
-                        id="tarjetaCredito" checked>
+                        <input type="radio" name="pagar" class="radio" id="tarjetaCredito">
                         <label for="tarjetaCredito"><span>
                             <i class="fa fa-credit-card"></i>Tarjeta de Crédito
                         </span></label>
-                        <input type="radio" name="pagar" class="radio"
-                        id="tarjetaDebito" checked>
+                        <input type="radio" name="pagar" class="radio" id="tarjetaDebito">
                         <label for="tarjetaDebito"><span>
                             <i class="fa fa-credit-card"></i>Tarjeta de Débito
                         </span></label>
-                        <input type="radio" name="pagar" class="radio"
-                        id="Efectivo" checked>
+                        <input type="radio" name="pagar" class="radio" id="Efectivo">
                         <label for="Efectivo"><span>
                             <i class="fa fa-money"></i>Efectivo
                         </span></label>
                     </div>
                 </div>
-                <div class="input_group">
-                    <div class="input_box">
-                        <input type="tel" placeholder="Numero en la tarjeta 1111 2222 3333 4444" 
-                        class="nombre" required>
-                        <i class="fa fa-credit-card"></i>
+                <div id="formularioTarjeta" class="input_box">
+                    <div class="input_group">
+                        <div class="input_box">
+                            <input type="tel" placeholder="Numero en la tarjeta 1111 2222 3333 4444" class="nombre" required>
+                            <i class="fa fa-credit-card"></i>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input_box">
+                            <input type="text" placeholder="Nombre en la tarjeta" class="nombre" required>
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input_box">
+                            <input type="tel" placeholder="Código de seguridad de la tarjeta" class="nombre" required>
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input_box">
+                            <input type="number" min="01" max="12" step="1" placeholder="Mes de vencimiento" class="nombre" required>
+                            <i class="fa fa-calendar icon"></i>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input_box">
+                            <input type="number" min="2024" max="2034" placeholder="Año de vencimiento" class="nombre" required>
+                            <i class="fa fa-calendar-o icon"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="input_group">
-                    <div class="input_box">
-                        <input type="text" placeholder="Nombre en la tarjeta"
-                        class="nombre" required>
-                        <i class="fa fa-user"></i>
-                    </div>
-                </div>
-                <div class="input_group">
-                    <div class="input_box">
-                        <input type="tel" placeholder="Código de seguridad de la tarjeta" 
-                        class="nombre" required>
-                        <i class="fa fa-lock"></i>
-                    </div>
-                </div>
-                <div class="input_group">
-                    <div class="input_box">
-                        <input type="number" placeholder="Mes de vencimiento" 
-                        class="nombre" required>
-                        <i class="fa fa-calendar icon"></i>
-                    </div>
-                </div>
-                <div class="input_group">
-                    <div class="input_box">
-                        <input type="number" placeholder="Año de vencimiento" 
-                        class="nombre" required>
-                        <i class="fa fa-calendar-o icon"></i>
-                    </div>
-                </div>
+                
                 <div class="input_group">
                     <div class="input_box">
                         <button type="submit">Pagar ahora</button>
@@ -99,5 +91,22 @@ Boton realizar pedido + redirect a catalogo -->
                 </div>
             </form>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var formularioTarjeta = document.getElementById('formularioTarjeta');
+                formularioTarjeta.style.display = 'none';
+                var radiosPago = document.querySelectorAll('input[name="pagar"]');
+        
+                radiosPago.forEach(function (radio) {
+                    radio.addEventListener('change', function () {
+                        if (this.id === 'tarjetaCredito' || this.id === 'tarjetaDebito') {
+                            formularioTarjeta.style.display = 'block';
+                        } else {
+                            formularioTarjeta.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
