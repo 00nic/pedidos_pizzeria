@@ -18,5 +18,21 @@ mysql = MySQL(app)
 def inicio():
     return render_template('inicio.html')
 
+@app.route('/realizarPago')
+def index():
+    return render_template('compra.html')
+
+@app.route('/procesar_pedido', methods=['POST'])
+def procesar_pedido():
+    email = request.form['email']
+    telefono = request.form['telefono']
+    direccion = request.form['direccion']
+    metodo_pago = request.form['metodo_pago']
+    """
+    if not email or not telefono or not direccion or not metodo_pago:
+        return {'error': 'Todos los campos son obligatorios'}, 400
+    else:
+        return 'Pedido recibido correctamente'"""
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
