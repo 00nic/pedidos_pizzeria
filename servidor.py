@@ -13,28 +13,23 @@ app.config['MYSQL__CURSORCLASS'] = os.getenv('MYSQL__CURSORCLASS')
 app.config['MYSQL__KEY'] = os.getenv('MYSQL__KEY')
 
 mysql = MySQL(app)
+
 @app.route('/')
 def inicio():
     return render_template('inicio.html')
 
-@app.route('/realizarPago')
-def index():
+@app.route('/catalogo')
+def catalogo():
+    return render_template('catalogo.html')
+
+@app.route('/compra')
+def compra():
     return render_template('compra.html')
 
-@app.route('/procesar_pedido', methods=['POST'])
-def procesar_pedido():
-    email = request.form['email']
-    telefono = request.form['telefono']
-    direccion = request.form['direccion']
-    metodo_pago = request.form['metodo_pago']
-    """
-    if not email or not telefono or not direccion or not metodo_pago:
-        return {'error': 'Todos los campos son obligatorios'}, 400
-    else:
-        return 'Pedido recibido correctamente'"""
+@app.route('/carrito')
+def carrito():
+    return render_template('carrito.html')
 
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
 @app.route("/base")
 def base():
     cur = mysql.connection.cursor()
@@ -48,3 +43,8 @@ def eliminar(id):
     cur.execute("DELETE FROM pizzas WHERE id = {0}".format(id))
     mysql.connection.commit()
     return redirect(url_for("base"))
+
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+
