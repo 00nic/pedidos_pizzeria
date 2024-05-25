@@ -46,5 +46,21 @@ def procesar_pedido():
     else:
         return 'Pedido recibido correctamente'"""
 
+@app.route("/base")
+def base():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM pizzas")
+    data = cur.fetchall()
+    return render_template( 'carrito.html', pizzas = data)
+
+@app.route("/eliminar/<string:id>")
+def eliminar(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM pizzas WHERE id = {0}".format(id))
+    mysql.connection.commit()
+    return redirect(url_for("base"))
+
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+
