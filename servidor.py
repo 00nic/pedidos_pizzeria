@@ -18,8 +18,6 @@ mysql = MySQL(app)
 def inicio():
     return render_template('inicio.html')
 
-
-
 @app.route('/catalogo')
 def catalogo():
     return render_template('catalogo.html')
@@ -31,6 +29,10 @@ def compra():
 @app.route('/realizarPago')
 def realizarPago():
     return render_template('compra.html')
+
+@app.route('/carrito')
+def carrito():
+    return render_template('carrito.html')
 
 @app.route('/procesar_pedido', methods=['POST'])
 def procesar_pedido():
