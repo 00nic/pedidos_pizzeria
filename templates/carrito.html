@@ -12,38 +12,54 @@ boton de confirmar compra redirect a catalogo -->
 </head>
 <body>
 <h1>Carrito de Compras</h1>
-<table>
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
-                <th>Envío<th>
-                <th>Subtotal</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+<div>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+        
         <tbody>
-            <tr>               
-                 {% for pizza in pizzas %}
-                    <tr>
-                        <td>{{pizza.0}}</td>
-                        <td>{{pizza.1}}</td>
-                        <td>{{pizza.2}}</td>
-                        <td>{{pizza.3}}</td>
-                        <td>
-                            <button>
-                            <a href="/edit/{{cliente.0}}">Editar</a>
-                            </button>
-                {% endfor %}
-            </tbody>
+            {% for pizza in pizzas %}
+                <tr>
+                    <td>{{pizza.1}}</td>
+                    <td>{{pizza.2}}</td>
+                    <td>
+                        <input type="number" name="cantidad" id="cantidad">
+                    
+                    <td>
+                        <button>
+                        <a href="/editar/{{cliente.0}}">Editar</a>
+                        </button>
+                        <button>
+                        <a href="/borrar/{{cliente.0}}">Borrar</a>
+                        </button>
+                    </td>
+
+            {% endfor %}
+                </tr>
+        </tbody>
     </table>
 </div>
+<div>
+<label for="envio">Envío</label>
+<input value="900" name="Envío" id="envio">
+</div>
+<div>
+<label for="total">Total</label>
+<input type="int" name="Total" id="total">
+</div>
 
+<div>
 <button>
-    <a href="/Realizar pago">Agregar producto</a>    
+    <a href="/catalogo">Agregar producto</a>    
 </button>
-
+<button>
+    <a href="/realizarPago">Confirmar compra</a>    
+</button>
+</div>
     
 </body>
 </html>
