@@ -32,8 +32,8 @@ def procesar_pedido():
     telefono = request.form['telefono']
     direccion = request.form['direccion']
     metodo_pago = request.form['metodo_pago']
+    
     return 'Pedido recibido correctamente'
-
 
 @app.route('/carrito')
 def carrito():
