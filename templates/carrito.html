@@ -11,6 +11,55 @@ boton de confirmar compra redirect a catalogo -->
     <title>Document</title>
 </head>
 <body>
+<h1>Carrito de Compras</h1>
+<div>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+        
+        <tbody>
+            {% for pizza in pizzas %}
+                <tr>
+                    <td>{{pizza.1}}</td>
+                    <td>{{pizza.2}}</td>
+                    <td>
+                        <input type="number" name="cantidad" id="cantidad">
+                    
+                    <td>
+                        <button>
+                        <a href="/borrar/{{cliente.0}}">Borrar</a>
+                        </button>
+                    </td>
+
+            {% endfor %}
+                </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+<label for="envio">Envío</label>
+<input value="900" name="Envío" id="envio">
+</div>
+<div>
+<label for="total">Total</label>
+<input type="int" name="Total" id="total">
+</div>
+
+<div>
+<button>
+    <a href="/catalogo">Agregar producto</a>    
+</button>
+<button>
+    <a href="/realizarPago">Confirmar compra</a>    
+</button>
+</div>
+    
+</body>
+</html>
     
 </body>
 </html>

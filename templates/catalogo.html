@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylecat.css">
+    <link rel="stylesheet" href="/static/stylecat.css">
     <title>catalogo</title>
 </head>
 <body>
@@ -15,81 +15,66 @@
         </div>
     </div>
     <section class="contenido">
+        <div class="mostrador" id="mostrador">
             <div class="fila">
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/muzzarella.jpg">
-                        <h1> Muzzarella </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                        
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/especial.jpg">
-                        <h1> Especial </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/capresse.jpg">
-                        <h1> Capresse </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/fugazza.jpg">
-                        <h1> Fugazzeta </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/napolitana.jpeg">
-                        <h1> Napolitana </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/cuatroQ.jpg">
-                        <h1>4 Quesos </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/champiñon.jpg">
-                        <h1> Champiñones </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
-                <article class="pizzas">
-                        <img src="imagenesPizzeria/roquefort.jpg">
-                        <h1> Roquefort </h1>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum placeat consequuntur praesentium facere ea libero. Vitae beatae natus rem laborum id, aspernatur recusandae officia distinctio illum consequuntur, laudantium voluptate.</p>
-                        <p> $1000</p>
-                        <div class="pizza-info">
-                            <button> AGREGAR AL CARRITO </button>
-                        </div>
-                </article>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/muzzarella.jpg">
+                        <p class="descripcion"> Mozzarella</p>
+                    </div>
+                    <button> Agregar al carrito </button>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/especial.jpg">
+                        <p class="descripcion" > Especial</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/capresse.jpg">
+                        <p class="descripcion" > Capresse</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/fugazza.jpg">
+                        <p class="descripcion" > Fugazzeta</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="imagenesPizzeria/mozzarella.jpeg">
+                        <p class="descripcion" > Napolitana</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/cuatroQ.jpg">
+                        <p class="descripcion" > 4 Quesos</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/champiñon.jpg">
+                        <p class="descripcion" > Champiñones</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="imagen">
+                        <img src="/static/imagenesPizzeria/roquefort.jpg">
+                        <p class="descripcion" > Roquefort</p>
+                        <button> Agregar al carrito </button>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
     
 </body>
