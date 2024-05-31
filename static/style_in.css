@@ -96,7 +96,59 @@ body{
     margin-top: 0;
 }
 /* css para tabla */
+
+.fondo{
+    height: 100vh;
+    background-image: url('/static/img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
 .tabla{
-    margin-top: 100px;
+    background-color: #dd2020cb;
+    margin-left: 5%;
+    margin-right: 10px;
+    width: 600px;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 110px;
+    margin-bottom: auto;
+    display: flex;
 
 }
+
+.tabla .separacion-item{
+    width: 20%;
+    height: auto;
+    /* display: inline-block; */
+    justify-items: space-between;
+    position: relative;
+    padding: 0 60px;
+
+}
+.item-action{
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+
+.boton {
+    display: inline-block;
+    margin: 15px;
+    font-size: 15px;
+    border-bottom: 2px solid #333;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+

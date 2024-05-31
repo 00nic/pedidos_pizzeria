@@ -12,7 +12,7 @@ boton de confirmar compra redirect a catalogo -->
     <link rel="stylesheet" href="/static/style_in.css">
 
 </head>
-<body>
+<body class="fondo">
     <div>
     <header class="header">
         <nav>
@@ -26,22 +26,22 @@ boton de confirmar compra redirect a catalogo -->
         </nav>
     </header>
     </div>
+    
 
-    <div class="tabla">
+<div class="tabla">
+    <div>
         <table>
-            <tr>
-                <th>Producto</th>
-                <th>Acciones</th>
-            </tr>
-            <tbody>
+            <tbody class="separacion">
                 {% for item in carrito %}
                 <tr>
-                    <td>{{ item }}</td>
-                    <td>
+                    <td class="separacion-item">{{ item }}</td>
+                    <td class="separacion-item">
+                    <div class="item-action">
                         <form action="{{ url_for('remove_product') }}" method="POST">
                             <input type="hidden" name="product_name" value="{{ item }}">
-                            <button type="submit">Eliminar</button>
+                            <button class="boton" type="submit">eliminar</button>
                         </form>
+                    </div>
                     </td>
                 </tr>
                 {% endfor %}
@@ -49,12 +49,14 @@ boton de confirmar compra redirect a catalogo -->
         </table>
     </div>
     <div>
-        <button>
-            <a href="{{ url_for('catalogo') }}">Agregar producto</a>
-        </button>
-        <button>
-            <a href="{{ url_for('compra') }}">Confirmar compra</a>
-        </button>
+        <div class="boton-inferior">
+            <a  href="{{ url_for('catalogo') }}"><button class="boton">Agregar producto</button></a>
+        </div>
+        <div class="boton-inferior">
+            <a href="{{ url_for('compra') }}"><button class="boton">Confirmar Compra</button></a>
+        </div>
+    
     </div>
+</div>
 </body>
 </html>
