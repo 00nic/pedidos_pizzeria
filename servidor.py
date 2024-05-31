@@ -62,6 +62,7 @@ def procesar_pedido():
     
     return 'Pedido recibido correctamente'
 
+
 @app.route("/base")
 def base():
     cur = mysql.connection.cursor()
