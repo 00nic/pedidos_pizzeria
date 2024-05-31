@@ -48,14 +48,17 @@ boton de confirmar compra redirect a catalogo -->
             </tbody>
         </table>
     </div>
-    <div>
-        <div class="boton-inferior">
-            <a  href="{{ url_for('catalogo') }}"><button class="boton">Agregar producto</button></a>
-        </div>
-        <div class="boton-inferior">
-            <a href="{{ url_for('compra') }}"><button class="boton">Confirmar Compra</button></a>
-        </div>
-    
+    <div class="boton-inferior">
+        <button class="boton">
+            <a href="{{url_for('catalogo')}}">Agregar producto</a>
+        </button>
+        <button class="boton">
+            <a href="{{ url_for('compra') }}">Confirmar Compra</a>
+            
+        </button>
+
+
+
     </div>
 </div>
 </body>
