@@ -25,15 +25,6 @@ def catalogo():
 @app.route('/compra')
 def compra():
     return render_template('compra.html')
-@app.route('/procesar_pedido', methods=['POST'])
-def procesar_pedido():
-    nombre = request.form['nombre']
-    email = request.form['email']
-    telefono = request.form['telefono']
-    direccion = request.form['direccion']
-    metodo_pago = request.form['metodo_pago']
-    
-    return 'Pedido recibido correctamente'
 
 @app.route('/carrito')
 def carrito():
