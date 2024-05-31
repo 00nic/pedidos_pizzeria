@@ -58,22 +58,25 @@ body{
     font-size: 10px;
 }
 
-.titulo1{
+.encabezado{
+
     padding: 6% 0;
     color:aliceblue;
-    margin-bottom: 30px;
-    padding: 6% 0
+    margin-bottom: 10px;
+    padding: 6% 0;
     width: 200px;
     height: 200px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
+    
 }
 
 h3{
     width: 90%;
+    color: aliceblue;
     margin-inline: auto;
     display: flex;
     flex-direction: column;
@@ -91,11 +94,23 @@ h3{
     display: grid;
     position: relative;
     grid-template-rows: auto lfr;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px ;
+    color:aliceblue
 
 }
 
 .pizzas img{
     position: relative;
-    width:100%
+    width:30%;
+    border-radius: 30px 30px 30px 30px;
+}
+
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius:
+    cursor: pointer;
+
 }
