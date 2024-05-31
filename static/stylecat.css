@@ -1,5 +1,3 @@
-/* Diseño de catalogo */
-
 *{
     margin: 0%;
     border: 0;
@@ -11,44 +9,6 @@ body{
     background-color: #880505d3;
 }
 
-.header{
-    position:fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color: #86585864;
-}
-
-.header nav{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-left: 3%;
-    padding-right: 5%;
-    padding-bottom: 10px;
-}
-.header ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.header ul li{
-    display: inline-block;
-    padding: 0 30px;
-}
-.header a{
-    color:white;
-    text-decoration:none;
-}
-.header .logo{
-    width: 110px;
-    height:auto;
-    border: 5px solid white;
-    border-radius: 10px;
-}
-
 .pizza-info{
     padding-bottom: 2%;
     background-color: rgb(235, 235, 235);
@@ -58,7 +18,7 @@ body{
     font-size: 10px;
 }
 
-.encabezado{
+.titulo1{
 
     padding: 6% 0;
     color:aliceblue;
@@ -91,12 +51,14 @@ h3{
 }
 
 .pizzas{
-    display: grid;
-    position: relative;
-    grid-template-rows: auto lfr;
-    border-radius: 15px ;
+    text-align: center;
+    padding-bottom: 10%;
+    background-color: rgb(54, 0, 0);
     color:aliceblue;
-    font-size: ;
+    border-radius: 10px;
+    font-weight: 20px;
+    font-size: 26px;
+    margin: 10px ;
 }
 
 .pizzas img{
@@ -106,16 +68,12 @@ h3{
 }
 
 button{
-    background-color: #611919;
+    background-color: #971b1b;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    display: grid;
+    border-radius: 10px;
+    cursor: pointer;
 }
-.imagen>h3{
-    font-weight: 600;
-    font: size 20pxpx;
 
-}
