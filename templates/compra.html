@@ -13,6 +13,9 @@ Boton realizar pedido + redirect a catalogo -->
         <title>Realizar pago</title>
     </head>
     <body>
+        
+    <div class="fondo">
+    
         <div class="container">
             <h2>Realizar pago</h2>
             <form action="/procesar_pedido" method="POST" >
@@ -102,6 +105,7 @@ Boton realizar pedido + redirect a catalogo -->
                 </div>
             </form>
         </div>
+    
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var formularioTarjeta = document.getElementById('formularioTarjeta');
@@ -136,5 +140,6 @@ Boton realizar pedido + redirect a catalogo -->
                 actualizarValidacionCampos();
             });
         </script>
+    </div>
     </body>
 </html>

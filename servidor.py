@@ -58,9 +58,9 @@ def procesar_pedido():
     email = request.form['email']
     telefono = request.form['telefono']
     direccion = request.form['direccion']
-    metodo_pago = request.form['metodo_pago']
+    metodo_pago = request.form['pagar']
     
-    return 'Pedido recibido correctamente'
+    return redirect(url_for('inicio'))
 
 
 @app.route("/base")

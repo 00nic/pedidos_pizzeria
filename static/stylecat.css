@@ -8,8 +8,10 @@
 }
 
 body {
-    /* background-color: #e71616de; */
-    background: linear-gradient( #FF0000, #860505);
+    height: 100vh;
+
+    /* background: rgb(228,88,58); */
+    background: linear-gradient(rgba(228,88,58,1) 0%, rgba(59,14,16,1) 100% );
 }
 
 .titulo1 {
