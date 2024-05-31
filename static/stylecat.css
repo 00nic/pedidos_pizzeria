@@ -9,7 +9,7 @@
 
 .pizza-info{
     padding-bottom: 2%;
-    background-color: beige;
+    background-color: rgb(110, 17, 5);
 
     color:aliceblue;
     border-radius: 100px;
@@ -17,7 +17,15 @@
     font-size: 10px;
 }
 
-.h1{
+h1{
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+h3{
     width: 90%;
     margin-inline: auto;
     display: flex;
@@ -34,6 +42,13 @@
 
 .pizzas{
     display: grid;
+    position: relative;
+    grid-template-rows: auto lfr;
+    border-radius: 15px;
 
+}
 
+.pizzas img{
+    position: relative;
+    width:100%
 }

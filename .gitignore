@@ -1,1 +1,5 @@
 .env
+app.config['MYSQL_DB']  = 'flaskcrud'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
