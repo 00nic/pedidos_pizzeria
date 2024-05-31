@@ -7,7 +7,9 @@
     font-family: Arial, sans-serif;
 }
 
-
+body{
+    background-color: #880505d3;
+}
 
 .header{
     position:fixed;
@@ -50,21 +52,26 @@
 .pizza-info{
     padding-bottom: 2%;
     background-color: rgb(235, 235, 235);
-
     color:aliceblue;
     border-radius: 100px;
     font-weight: 100;
     font-size: 10px;
 }
 
-h1{
-    width: 90%;
-    margin-inline: auto;
+.titulo1{
+    padding: 6% 0;
+    color:aliceblue;
+    margin-bottom: 30px;
+    padding: 6% 0
+    width: 200px;
+    height: 200px;
+    text-align: center;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
 }
+
 h3{
     width: 90%;
     margin-inline: auto;
@@ -84,7 +91,7 @@ h3{
     display: grid;
     position: relative;
     grid-template-rows: auto lfr;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 
 }
 
