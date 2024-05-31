@@ -38,6 +38,8 @@ def add_product():
     if 'carrito' not in session:
         session['carrito'] = []
     session['carrito'].append(product_name)
+    session.modified=True
+    
     return redirect(url_for('catalogo'))
 
 @app.route('/remove_product', methods=['POST'])
@@ -45,6 +47,7 @@ def remove_product():
     product_name = request.form.get('product_name')
     if 'carrito' in session:
         session['carrito'].remove(product_name)
+        session.modified=True
     return redirect(url_for('carrito'))
 
 
@@ -62,14 +65,14 @@ def procesar_pedido():
 @app.route("/base")
 def base():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM pizzas")
+    cur.execute("SELECT * FROM catalogo")
     data = cur.fetchall()
     return render_template( 'carrito.html', pizzas = data)
 
 @app.route("/eliminar/<string:id>")
 def eliminar(id):
     cur = mysql.connection.cursor()
-    cur.execute("DELETE FROM pizzas WHERE id = {0}".format(id))
+    cur.execute("DELETE FROM catalogo WHERE id = %s",(id,))
     mysql.connection.commit()
     return redirect(url_for("base"))
 
