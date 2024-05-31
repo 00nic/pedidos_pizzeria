@@ -6,12 +6,12 @@
 }
 
 body{
-    background-color: #880505d3;
+    background-color: #b60c0c;
 }
 
 .pizza-info{
     padding-bottom: 2%;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     color:aliceblue;
     border-radius: 100px;
     font-weight: 100;
@@ -19,9 +19,8 @@ body{
 }
 
 .titulo1{
-
     padding: 6% 0;
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     margin-bottom: 10px;
     padding: 6% 0;
     width: 200px;
@@ -36,7 +35,7 @@ body{
 
 h3{
     width: 90%;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     margin-inline: auto;
     display: flex;
     flex-direction: column;
@@ -53,8 +52,8 @@ h3{
 .pizzas{
     text-align: center;
     padding-bottom: 10%;
-    background-color: rgb(54, 0, 0);
-    color:aliceblue;
+    background-color: rgb(228, 228, 228);
+    color:rgb(2, 2, 2);
     border-radius: 10px;
     font-weight: 20px;
     font-size: 26px;
@@ -68,7 +67,7 @@ h3{
 }
 
 button{
-    background-color: #971b1b;
+    background-color:#b60c0c;
     color: white;
     padding: 10px 20px;
     border: none;
