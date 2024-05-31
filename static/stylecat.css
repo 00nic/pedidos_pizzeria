@@ -10,17 +10,15 @@ body {
 }
 
 .titulo1 {
-    padding: 5%;
+    padding: 6%;
     color: rgb(255, 255, 255);
     margin-bottom: 10px;
-    padding: 3% 0;
     width: 600px;
-    height: 200px;
     text-align: center;
+    font-size: 27px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 27px;
 }
 
 h3 {
@@ -45,9 +43,9 @@ h3 {
     background-color: rgb(255, 252, 252);
     color: rgb(2, 2, 2);
     border-radius: 30px;
-    font-weight: 2px;
-    font-size: 24px;
-    margin: 100px;
+    font-weight: 20px;
+    font-size: 20px;
+    margin: 30px;
 }
 
 .pizzas img {
