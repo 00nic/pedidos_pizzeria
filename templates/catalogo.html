@@ -6,9 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/stylecat.css">
+    <link rel="stylesheet" href="/static/style_in.css">
+
     <title>catalogo</title>
 </head>
 <body>
+    <header class="header">
+ 
+        <nav>
+        <img src="/static/img/logo2.png" alt="logo" class="logo">
+            <ul>
+            <li><a href="/">INICIO</a></li>
+            <li><a href="/catalogo">CATALOGO</a></li>
+            <li><a href="/compra">COMPRA</a></li>
+            <li><a href="/carrito">CARRITO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
     <div class="encabezado"> 
         <div class="titulo1">
             <h3>NUESTRAS PIZZAS</h3>
@@ -22,22 +38,35 @@
                         <img src="/static/imagenesPizzeria/muzzarella.jpg">
                         <p class="descripcion"> Mozzarella</p>
                     </div>
-                    <button> Agregar al carrito </button>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Mozzarella">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
+                <!-- especial -->
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/especial.jpg">
                         <p class="descripcion" > Especial</p>
-                        <button> Agregar al carrito </button>
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Especial">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
+                <!-- capresse -->
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/capresse.jpg">
                         <p class="descripcion" > Capresse</p>
-                        <button> Agregar al carrito </button>
+                        
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Capresse">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
+                <!-- fugazzeta -->
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/fugazza.jpg">
@@ -49,29 +78,44 @@
                     <div class="imagen">
                         <img src="imagenesPizzeria/mozzarella.jpeg">
                         <p class="descripcion" > Napolitana</p>
-                        <button> Agregar al carrito </button>
+                        
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Napolitana">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/cuatroQ.jpg">
                         <p class="descripcion" > 4 Quesos</p>
-                        <button> Agregar al carrito </button>
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="cuatroquesos">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/champiñon.jpg">
                         <p class="descripcion" > Champiñones</p>
-                        <button> Agregar al carrito </button>
+                        
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Campiñones">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
                 <div class="item">
                     <div class="imagen">
                         <img src="/static/imagenesPizzeria/roquefort.jpg">
                         <p class="descripcion" > Roquefort</p>
-                        <button> Agregar al carrito </button>
+                        
                     </div>
+                    <form action="{{ url_for('add_product') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Roquefort">
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>

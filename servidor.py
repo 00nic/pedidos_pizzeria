@@ -11,6 +11,7 @@ app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
 app.config['MYSQL__CURSORCLASS'] = os.getenv('MYSQL__CURSORCLASS')
 app.config['MYSQL__KEY'] = os.getenv('MYSQL__KEY')
+app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 
 mysql = MySQL(app)
 
@@ -25,6 +26,29 @@ def catalogo():
 @app.route('/compra')
 def compra():
     return render_template('compra.html')
+
+@app.route('/carrito')
+def carrito():
+    carrito = session.get('carrito', [])
+    return render_template('carrito.html', carrito=carrito)
+
+@app.route('/add_product', methods=['POST'])
+def add_product():
+    product_name = request.form.get('product_name')
+    if 'carrito' not in session:
+        session['carrito'] = []
+    session['carrito'].append(product_name)
+    return redirect(url_for('catalogo'))
+
+@app.route('/remove_product', methods=['POST'])
+def remove_product():
+    product_name = request.form.get('product_name')
+    if 'carrito' in session:
+        session['carrito'].remove(product_name)
+    return redirect(url_for('carrito'))
+
+
+
 @app.route('/procesar_pedido', methods=['POST'])
 def procesar_pedido():
     nombre = request.form['nombre']
@@ -34,10 +58,6 @@ def procesar_pedido():
     metodo_pago = request.form['metodo_pago']
     
     return 'Pedido recibido correctamente'
-
-@app.route('/carrito')
-def carrito():
-    return render_template('carrito.html')
 
 @app.route("/base")
 def base():
