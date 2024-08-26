@@ -107,18 +107,18 @@ Boton realizar pedido + redirect a catalogo -->
                 var radiosPago = document.querySelectorAll('input[name="pagar"]');
         
                 function actualizarValidacionCampos() {
-                    var camposTarjeta = formularioTarjeta.querySelectorAll('input'); // Selecciona los campos dentro del formulario de tarjeta
-                    if (radiosPago[0].checked) { // Efectivo seleccionado
+                    var camposTarjeta = formularioTarjeta.querySelectorAll('input'); 
+                
+                    if (radiosPago[0].checked) {
                         camposTarjeta.forEach(function(campo) {
                             campo.removeAttribute('required');
                         });
-                    } else { // Cualquier otro método de pago seleccionado
+                    } else { 
                         camposTarjeta.forEach(function(campo) {
                             campo.setAttribute('required', '');
                         });
                     }
                 }
-        
                 radiosPago.forEach(function (radio) {
                     radio.addEventListener('change', function () {
                         if (this.id === 'tarjetaCredito' || this.id === 'tarjetaDebito') {
@@ -126,11 +126,9 @@ Boton realizar pedido + redirect a catalogo -->
                         } else {
                             formularioTarjeta.style.display = 'none';
                         }
-                        actualizarValidacionCampos(); // Llamar a la función de actualización de validación cuando cambia la selección de pago
+                        actualizarValidacionCampos(); 
                     });
                 });
-        
-                // Llamar a la función de actualización de validación inicialmente para asegurarse de que los campos estén configurados correctamente
                 actualizarValidacionCampos();
             });
         </script>
